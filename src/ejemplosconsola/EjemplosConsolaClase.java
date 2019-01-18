@@ -42,9 +42,38 @@ public class EjemplosConsolaClase {
         }
         
         
-
+        
         return listaMaximos;
         //devuelve el valor de los 2 maximos  
+    }
+    private boolean esPalindromo (String cadena){
+        //Primera fase: Creo un nuevo String que sea una copia del
+        //que me pasan pero quitandole los espacios en blanco
+        String auxiliar ="";
+        for (int i=0; i< cadena.length(); i++){
+            if (cadena.charAt(i) != ' '){
+                auxiliar = auxiliar + cadena.charAt(i);
+            }
+            
+        }  
+        //ahora en auxiliar tengo el string pero sin espacios en blanco
+        //declaro dos indices para que digan que posiciones estoy comparando
+        int indiceIzq = 0;
+        int indiceDer = auxiliar.length() -1;
+        
+        //mientras sean iguales los caracteres en esas posiciones la palabra será un palíndromo
+        //en el momento en el que una de esas comparaciones falle es que no es palíndromo
+        
+        //además si el indice izquierdo es mayor que el derecho, ya he chequeado toda la frase
+        while (auxiliar.charAt(indiceIzq) == auxiliar.charAt(indiceDer) && indiceIzq <= indiceDer){
+            indiceIzq++;
+            indiceDer--;
+        }
+        boolean resultado = true;
+        if (indiceIzq < indiceDer){  //Si esto se cumple es que la palabra no es un palindromo
+            resultado = false;
+        }
+        return resultado; 
     }
     
     /**
@@ -56,6 +85,8 @@ public class EjemplosConsolaClase {
         System.out.println( Arrays.toString(ejercicios.maximos(ejercicios.listaNumeros)));
         System.out.println( Arrays.toString(ejercicios.maximos(ejercicios.listaNumeros2)));
         System.out.println( Arrays.toString(ejercicios.maximos(ejercicios.listaNumeros3)));
+        System.out.println(ejercicios.esPalindromo("ACASO HUBO BUHOS ACA"));
+        
     }
     
     
