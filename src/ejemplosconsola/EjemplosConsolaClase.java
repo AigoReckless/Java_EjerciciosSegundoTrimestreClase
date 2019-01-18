@@ -72,6 +72,10 @@ public class EjemplosConsolaClase {
         boolean resultado = true;
         if (indiceIzq < indiceDer){  //Si esto se cumple es que la palabra no es un palindromo
             resultado = false;
+            System.out.println("NO ES UN PALINDROMO");
+        }
+        else{
+            System.out.println("SI ES UN PALINDROMO");
         }
         return resultado; 
     }
