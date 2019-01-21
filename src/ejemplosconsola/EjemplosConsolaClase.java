@@ -80,16 +80,48 @@ public class EjemplosConsolaClase {
         return resultado; 
     }
     
+    private void palindromoV2 (String cadena){
+        String auxiliar = "";
+        for (int i=0; i< cadena.length(); i++){
+            if (cadena.charAt(i) != ' '){
+                auxiliar = auxiliar + cadena.charAt(i);
+            }
+        
+        }
+        /*
+        Aquí ya tengo en el string auxiliar todas las letras de la palabra
+        original pero sin los espacios en blanco
+        */
+        int indiceIzq = 0;
+        int indiceDer = auxiliar.length() - 1;
+        
+        while (auxiliar.charAt(indiceIzq) == auxiliar.charAt(indiceDer) 
+                && indiceIzq <= indiceDer){
+            indiceIzq++;
+            indiceDer--;
+        }
+        if (indiceIzq < indiceDer){
+            System.out.println("la cadena " + cadena + " no es un palindromo");
+                
+        }
+        else{
+            System.out.println("la cadena " + cadena + " si es un palindromo");
+        }
+    }
+    
+    
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         EjemplosConsolaClase ejercicios = new EjemplosConsolaClase();
         
-        System.out.println( Arrays.toString(ejercicios.maximos(ejercicios.listaNumeros)));
-        System.out.println( Arrays.toString(ejercicios.maximos(ejercicios.listaNumeros2)));
-        System.out.println( Arrays.toString(ejercicios.maximos(ejercicios.listaNumeros3)));
-        System.out.println(ejercicios.esPalindromo("ACASO HUBO BUHOS ACA"));
+//        System.out.println( Arrays.toString(ejercicios.maximos(ejercicios.listaNumeros)));
+//        System.out.println( Arrays.toString(ejercicios.maximos(ejercicios.listaNumeros2)));
+//        System.out.println( Arrays.toString(ejercicios.maximos(ejercicios.listaNumeros3)));
+//        System.out.println(ejercicios.esPalindromo("ACASO HUBO BUHOS ACA"));
+        ejercicios.palindromoV2("ACASO HUBO BUHOS ACA");
         
     }
     
