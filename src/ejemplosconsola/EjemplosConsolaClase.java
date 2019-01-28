@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class EjemplosConsolaClase {
     
     //Declaro un array de ints de instancia
-    int[] listaNumeros ={200, 31, 27, 2, 5, 99};
+    int[] listaNumeros ={-20, 50};
     int[] listaNumeros2 ={-3, -3, -9, -3, 0, -209, -10, 0};
     int[] listaNumeros3 ={0, 2000, -4, 1581, 5, 999, 777, 9};
     
@@ -109,7 +109,35 @@ public class EjemplosConsolaClase {
         }
     }
     
-    
+    private boolean isograma (String palabra){
+        for (int i=0; i <palabra.length()-1; i++){
+            for (int j= i+1; j<palabra.length(); j++){
+                if (palabra.charAt(j) == palabra.charAt(i)){
+                    return false;
+                }
+            }
+        }
+        //si ha recorrido los dos bucles for enteros, es que
+        //la palabra no tiene letras repetidas
+        return true;
+    }
+//        String aux = "";
+//        boolean esIsograma = false;
+//        for (int i=0; i<palabra.length()-1; i++){
+//            for(int j=0; j<palabra.length(); j++){
+//                aux = aux + palabra.charAt(i);
+//                if (aux.equals (palabra.charAt(j))){
+//                    esIsograma = true;
+//                }
+//                else{
+//                    esIsograma = false;
+//                }
+//            }  
+//            
+//        }
+//        
+//        return esIsograma;      
+//    }
     
     /**
      * @param args the command line arguments
@@ -121,7 +149,8 @@ public class EjemplosConsolaClase {
 //        System.out.println( Arrays.toString(ejercicios.maximos(ejercicios.listaNumeros2)));
 //        System.out.println( Arrays.toString(ejercicios.maximos(ejercicios.listaNumeros3)));
 //        System.out.println(ejercicios.esPalindromo("ACASO HUBO BUHOS ACA"));
-        ejercicios.palindromoV2("ACASO HUBO BUHOS ACA");
+//        ejercicios.palindromoV2("ACASO HUBO BUHOS ACA");
+           System.out.println(ejercicios.isograma("pipo"));
         
     }
     
