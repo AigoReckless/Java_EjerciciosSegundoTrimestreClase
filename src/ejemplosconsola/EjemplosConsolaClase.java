@@ -13,13 +13,14 @@ import java.util.Arrays;
 public class EjemplosConsolaClase {
     
     //Declaro un array de ints de instancia
-    int[] listaNumeros ={-20, 50};
-    int[] listaNumeros2 ={-3, -3, -9, -3, 0, -209, -10, 0};
-    int[] listaNumeros3 ={0, 2000, -4, 1581, 5, 999, 777, 9};
-    
+//    int[] listaNumeros ={-20, 50};
+//    int[] listaNumeros2 ={-3, -3, -9, -3, 0, -209, -10, 0};
+//    int[] listaNumeros3 ={0, 2000, -4, 1581, 5, 999, 777, 9};
+      
     /*
     El método máximo va a calcular el máximo y el segundo máximo de una lista de numeros
     */
+    
     private int[] maximos (int[] lista){
         
         //declaramos un array de dos elementos para guardar el máximo y el segundo máximo
@@ -79,10 +80,30 @@ public class EjemplosConsolaClase {
         }
         return resultado; 
     }
-    
+    private void imprimeMes (int num){
+        if (num > 0 && num<7){
+            for (int i= 0; i <num; i++){
+                System.out.print(" " + "XX");
+            }    
+        }
+        
+        for (int i = 1; i<32; i++){
+            System.out.print(" " + i);
+        }
+        if (num<5 && num >0){
+            for(int i=num; i<4; i++){
+                System.out.print(" " + "XX");
+            }
+        }     
+        if (num>4 && num <7){
+            for(int i=num; i>4; i++){
+                System.out.print(" " + "XX");
+            }
+        }   
+    }
     private void palindromoV2 (String cadena){
         String auxiliar = "";
-        for (int i=0; i< cadena.length(); i++){
+        for (int ){
             if (cadena.charAt(i) != ' '){
                 auxiliar = auxiliar + cadena.charAt(i);
             }
@@ -150,8 +171,8 @@ public class EjemplosConsolaClase {
 //        System.out.println( Arrays.toString(ejercicios.maximos(ejercicios.listaNumeros3)));
 //        System.out.println(ejercicios.esPalindromo("ACASO HUBO BUHOS ACA"));
 //        ejercicios.palindromoV2("ACASO HUBO BUHOS ACA");
-           System.out.println(ejercicios.isograma("pipo"));
-        
+//           System.out.println(ejercicios.isograma("pipo"));
+             ejercicios.imprimeMes(6);
     }
     
     
