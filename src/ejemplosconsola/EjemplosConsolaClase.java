@@ -80,30 +80,45 @@ public class EjemplosConsolaClase {
         }
         return resultado; 
     }
-    private void imprimeMes (int num){
-        if (num > 0 && num<7){
-            for (int i= 0; i <num; i++){
-                System.out.print(" " + "XX");
-            }    
+    private void imprimeMes(int numx){
+        //filtra el numero para que siempre valga entre 0 y 7
+        numx = numx % 7;
+        if (numx >7){
+            numx = 7;
+        }
+        int contador = 0;
+        //pintara tantas xx como numX sea
+    
+        for (int j=1; j<numx; j++){
+            System.out.print("XX ");
+            contador = contador + 1;
+        }
+        for (int i=1; i<=31; i++){
+            if (contador <=7){
+                if (i<=9){
+                    System.out.print("0" + i);
+                    System.out.print(" ");
+                }
+            }
+            if (i>9){
+                System.out.print(i);
+                System.out.print(" ");
+            }
+            contador = contador + 1;
+        
+            if(contador==7){
+                System.out.println("");
+                contador = 0;
+            }
+        }
+        for(int x=contador; x<7; x++){
+            System.out.print("XX ");
         }
         
-        for (int i = 1; i<32; i++){
-            System.out.print(" " + i);
-        }
-        if (num<5 && num >0){
-            for(int i=num; i<4; i++){
-                System.out.print(" " + "XX");
-            }
-        }     
-        if (num>4 && num <7){
-            for(int i=num; i>4; i++){
-                System.out.print(" " + "XX");
-            }
-        }   
-    }
+    } 
     private void palindromoV2 (String cadena){
         String auxiliar = "";
-        for (int ){
+        for (int i=0; i<cadena.length(); i++){
             if (cadena.charAt(i) != ' '){
                 auxiliar = auxiliar + cadena.charAt(i);
             }
@@ -172,7 +187,11 @@ public class EjemplosConsolaClase {
 //        System.out.println(ejercicios.esPalindromo("ACASO HUBO BUHOS ACA"));
 //        ejercicios.palindromoV2("ACASO HUBO BUHOS ACA");
 //           System.out.println(ejercicios.isograma("pipo"));
-             ejercicios.imprimeMes(6);
+        for (int i = 0; i<7; i++){     
+            ejercicios.imprimeMes(i);
+            System.out.println();
+            System.out.println();
+        }    
     }
     
     
