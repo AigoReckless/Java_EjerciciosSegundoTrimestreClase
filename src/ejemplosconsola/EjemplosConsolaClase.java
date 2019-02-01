@@ -80,6 +80,23 @@ public class EjemplosConsolaClase {
         }
         return resultado; 
     }
+    private boolean esAnagrama (String palabraA, String palabraB){
+        palabraA = palabraA.toUpperCase();
+        palabraB = palabraB.toUpperCase();
+        
+        boolean anagrama = false; //Indica si las palabras son anagramas o no
+        
+        if (palabraA.length() == palabraB.length()){ //sólo empiezo a chequear si las 
+                                                     //dos palabras tienen la misma longitud
+          for(int i=0; i<palabraA.length(); i++){
+              for (int j=0; j<palabraA.length(); j++){
+                  
+              }
+          }  
+        }
+        
+        return anagrama;
+    }
     private void imprimeMes(int numx){
         //filtra el numero para que siempre valga entre 0 y 7
         numx = numx % 7;
