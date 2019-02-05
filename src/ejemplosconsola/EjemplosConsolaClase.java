@@ -120,6 +120,17 @@ public class EjemplosConsolaClase {
         }
         return auxiliar;
     }
+    private void hazAcronimo (String palabra){
+        String acronimo = "";
+        acronimo = palabra.substring(0,1);
+        for (int i=0; i<palabra.length(); i++){
+            if (palabra.charAt(i) == ' '){
+            
+                acronimo = acronimo + palabra.charAt(i + 1);
+            }
+        }
+        System.out.println("El acronimo de " + palabra + " es " + acronimo);
+    }
     private void imprimeMes(int numx){
         //filtra el numero para que siempre valga entre 0 y 7
         numx = numx % 7;
@@ -231,11 +242,12 @@ public class EjemplosConsolaClase {
 //            ejercicios.imprimeMes(i);
 //            System.out.println();
 //            System.out.println();
-        System.out.println("i am lord voldemort tom marvolo riddle  " +ejercicios.esAnagrama("i am lord voldemort", "tom marvolo riddle")) ;
-        System.out.println("roma amor " + ejercicios.esAnagrama("roma", "amor"));
-        System.out.println("jamon pepee " + ejercicios.esAnagrama("jamon", "pepee"));
-        System.out.println("jamon monja " + ejercicios.esAnagrama("jamon", "monja"));
-//        }   
+//        System.out.println("i am lord voldemort tom marvolo riddle  " +ejercicios.esAnagrama("i am lord voldemort", "tom marvolo riddle")) ;
+//        System.out.println("roma amor " + ejercicios.esAnagrama("roma", "amor"));
+//        System.out.println("jamon pepee " + ejercicios.esAnagrama("jamon", "pepee"));
+//        System.out.println("jamon monja " + ejercicios.esAnagrama("jamon", "monja"));
+            ejercicios.hazAcronimo("i am lord voldemort");
+        
 
     }
     
