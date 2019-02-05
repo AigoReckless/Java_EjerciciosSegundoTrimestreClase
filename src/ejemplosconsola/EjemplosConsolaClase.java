@@ -83,17 +83,29 @@ public class EjemplosConsolaClase {
     private boolean esAnagrama (String palabraA, String palabraB){
         palabraA = palabraA.toUpperCase();
         palabraB = palabraB.toUpperCase();
-        
-        boolean anagrama = false; //Indica si las palabras son anagramas o no
-        
+        boolean anagrama = false;
         if (palabraA.length() == palabraB.length()){ //sólo empiezo a chequear si las 
                                                      //dos palabras tienen la misma longitud
-          for(int i=0; i<palabraA.length(); i++){
-              for (int j=0; j<palabraA.length(); j++){
-                  
-              }
-          }  
-        }
+            
+            for (int i=0; i<palabraA.length(); i++){
+                int posicion = 0;
+                while(posicion < palabraB.length() && palabraA.charAt(i) != palabraB.charAt(posicion)){
+                   posicion ++;      
+                }
+                if (posicion == palabraB.length()){
+                    return false;
+                }
+                else{
+                    palabraB = palabraB.substring(0,posicion) + palabraB.substring(posicion+1);
+                }    
+            } 
+            
+            if (palabraB.length() == 0){
+                return true;
+            }
+        } 
+         
+        
         
         return anagrama;
     }
@@ -202,13 +214,16 @@ public class EjemplosConsolaClase {
 //        System.out.println( Arrays.toString(ejercicios.maximos(ejercicios.listaNumeros2)));
 //        System.out.println( Arrays.toString(ejercicios.maximos(ejercicios.listaNumeros3)));
 //        System.out.println(ejercicios.esPalindromo("ACASO HUBO BUHOS ACA"));
-//        ejercicios.palindromoV2("ACASO HUBO BUHOS ACA");
+//       ejercicios.palindromoV2("ACASO HUBO BUHOS ACA");
 //           System.out.println(ejercicios.isograma("pipo"));
-        for (int i = 0; i<7; i++){     
-            ejercicios.imprimeMes(i);
-            System.out.println();
-            System.out.println();
-        }    
+//        for (int i = 0; i<7; i++){     
+//            ejercicios.imprimeMes(i);
+//            System.out.println();
+//            System.out.println();
+//        }   
+System.out.println("roma amor " + ejercicios.esAnagrama("roma", "amor"));
+      System.out.println("jamon pepee " + ejercicios.esAnagrama("jamon", "pepee"));
+    System.out.println("jamon monja " + ejercicios.esAnagrama("jamon", "monja"));
     }
     
     
