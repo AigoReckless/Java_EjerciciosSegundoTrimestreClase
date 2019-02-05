@@ -83,6 +83,8 @@ public class EjemplosConsolaClase {
     private boolean esAnagrama (String palabraA, String palabraB){
         palabraA = palabraA.toUpperCase();
         palabraB = palabraB.toUpperCase();
+        palabraA = quitaEspaciosEnBlanco(palabraA);
+        palabraB = quitaEspaciosEnBlanco(palabraB);
         boolean anagrama = false;
         if (palabraA.length() == palabraB.length()){ //sólo empiezo a chequear si las 
                                                      //dos palabras tienen la misma longitud
@@ -108,6 +110,15 @@ public class EjemplosConsolaClase {
         
         
         return anagrama;
+    }
+    private String quitaEspaciosEnBlanco(String frase){
+        String auxiliar = "";
+        for (int i=0; i<frase.length(); i++){
+            if (frase.charAt(i) != ' '){
+                auxiliar = auxiliar + frase.charAt(i);
+            }
+        }
+        return auxiliar;
     }
     private void imprimeMes(int numx){
         //filtra el numero para que siempre valga entre 0 y 7
@@ -220,10 +231,12 @@ public class EjemplosConsolaClase {
 //            ejercicios.imprimeMes(i);
 //            System.out.println();
 //            System.out.println();
+        System.out.println("i am lord voldemort tom marvolo riddle  " +ejercicios.esAnagrama("i am lord voldemort", "tom marvolo riddle")) ;
+        System.out.println("roma amor " + ejercicios.esAnagrama("roma", "amor"));
+        System.out.println("jamon pepee " + ejercicios.esAnagrama("jamon", "pepee"));
+        System.out.println("jamon monja " + ejercicios.esAnagrama("jamon", "monja"));
 //        }   
-System.out.println("roma amor " + ejercicios.esAnagrama("roma", "amor"));
-      System.out.println("jamon pepee " + ejercicios.esAnagrama("jamon", "pepee"));
-    System.out.println("jamon monja " + ejercicios.esAnagrama("jamon", "monja"));
+
     }
     
     
